@@ -10,8 +10,9 @@ function TxInfo() {
     const [tx_info, setTx_info] = useState(0);
 
     const getData = async () => {
+        console.log(txNum);
         const res = await txAPI.getTxInfo(txNum);
-        console.log(res);
+        console.log(1,res);
         res.blockHeight = await txAPI.getTxBlockNum(res.blockhash);
         setTx_info(res);
     };
